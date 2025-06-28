@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NutriGaze | About</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .hero-bg {
+      background: url('https://cdn.pixabay.com/photo/2016/03/05/19/02/hungarian-wax-pepper-1238252_1280.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      position: relative;
+      color: white;
+    }
+
+    .hero-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.55);
+      z-index: 0;
+    }
+
+    nav {
+      position: relative;
+      z-index: 10;
+    }
+
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #ef4444;
+      border-radius: 2px;
+    }
+
+    .btn {
+      border: 1px solid white;
+      border-radius: 9999px;
+      padding: 0.5rem 1.75rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: white;
+      background: transparent;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ef4444;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero-bg flex flex-col">
+    <!-- Navbar -->
+    <nav class="flex flex-col sm:flex-row justify-between items-center px-4 sm:px-8 py-4 sm:py-6 max-w-7xl w-full mx-auto text-white">
+      <div class="text-xl font-semibold tracking-wide mb-2 sm:mb-0">NUTRIGAZE</div>
+      <ul class="flex flex-col sm:flex-row gap-3 sm:gap-10 text-sm font-medium text-center">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}" class="active">About</a></li>
+        <li><a href="{{ url_for('predict') }}">Predict</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- About Content -->
+    <main class="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 text-white text-center z-10">
+      <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 sm:p-8 rounded-xl max-w-xl sm:max-w-2xl mt-6 text-left">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-center">About NutriGaze</h1>
+        <p class="mb-4">NutriGaze is a pioneering organization dedicated to enhancing the quality and safety of your fruits and vegetables using smart technology.</p>
+        <p class="mb-4">Our mission is to assist farmers, vendors, and consumers in identifying spoilage and ripeness in produce using deep learning and image classification.</p>
+        <ul class="list-disc list-inside space-y-2 mb-6">
+          <li>Classifies fruits and vegetables as healthy or rotten.</li>
+          <li>Helps reduce food waste by early detection of spoilage.</li>
+          <li>Ensures quality and freshness from farm to plate.</li>
+        </ul>
+        <div class="text-center">
+          <a href="{{ url_for('predict') }}" class="btn">Start Predicting</a>
+        </div>
+      </div>
+    </main>
+  </header>
+</body>
+</html>
