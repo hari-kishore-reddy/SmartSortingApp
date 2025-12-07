@@ -9,8 +9,6 @@ An AI-powered web application that detects whether fruits or vegetables are **he
 **Team ID**: LTVIP2025TMID42087  
 **Team Members**:
 - Y. Hari Kishore Reddy – [LinkedIn](https://www.linkedin.com) | yeddulaharikishore2004@gmail.com  
-- Syed Ifteqar Ahmed – sgmiaum042@gmail.com  
-- Shaik Samad
 
 ---
 
